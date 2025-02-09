@@ -1,8 +1,16 @@
 services:
-  node:
-    build: .
+  app:
+    container_name: todo-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ./:/usr/src/app
-    command: sh -c 'cd react-app && yarn start'
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      
     ports:
-      - '3000:3000'
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    working_dir: /usr/src/app
+    command: ["npm", "start"]

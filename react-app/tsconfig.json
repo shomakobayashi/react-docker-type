@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "types": ["jest"],
+      "jsx": "react-jsx",
+      "lib": ["es2015", "dom"],
+    },
+    "include": [
+      "src/**/*",
+      "src/custom.d.ts"
+    ]
+}  
